@@ -1,0 +1,286 @@
+//main: style.less
+
+.section{
+    padding: @padding-section;
+}
+
+.section-header{
+    width: 100%;
+    max-width: @max-width-section-header;
+    margin: @margin-section-header;
+
+    text-align: center;
+}
+
+.h3-section a{
+    font-size: @font-size-h3-product;
+    text-transform:@text-transform;
+}
+
+.h3-section a:after{
+    content: "";
+    display: block;
+    width:@width-h3-product-after;
+    height:@height-h3-product-after;
+    margin: @margin-h3-product-after;
+    background-color: @background-color-h3-product-after;
+
+}
+
+.h3-section a:hover{
+    color: @color-hover;
+}
+
+.h3-section a:hover:after{
+    background-color: @background-nav-link;
+
+}
+
+.h3-section a{
+    text-decoration: none;
+    color:#212121;
+}
+
+/*without hover h3*/
+
+.h3-non{
+    font-size: @font-size-h3-product;
+    text-transform:@text-transform;
+}
+
+.h3-non:after{
+    content: "";
+    display: block;
+    width:@width-h3-product-after;
+    height:@height-h3-product-after;
+    margin: @margin-h3-product-after;
+    background-color: @background-color-h3-product-after;
+}
+
+.section-title{
+    margin: @margin-section-title;
+}
+
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px -15px 0;
+}
+
+.card-item{
+    max-width: @width-card-item;
+    padding: 0 15px;
+}
+
+.card-inner{
+     background-color:@background-color-product-item;
+    position: relative;
+
+}
+
+.card-item:hover{
+    .card-img{
+        transform: @card-item-hover;
+    }
+}
+
+.card-item:hover{
+    .card-img img{
+        opacity: .1;
+    }
+}
+
+.card-item:hover{
+    .card-text{
+        opacity:1;
+    }
+}
+
+.card-img{
+    background: linear-gradient(to bottom, #D6A4A4, #DAE2F8);
+    transition: translate .1s linear;
+}
+
+.card-img img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+   transition: opacity .1s linear;
+}
+
+.card-text{
+    width: 100%;
+
+    color: @card-item-color;
+    text-align: center;
+    text-transform: @text-transform;
+    font-weight: 700;
+    opacity: 0;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 2;
+    transform: translate3d(0,-50%,0);
+    transition: opacity .2s linear;
+}
+
+.section-button{
+    margin-top: 50px;
+}
+
+
+/*Services*/
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.services-item{
+    width: 33.33333%;
+    padding: 0 15px 30px 90px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.services-item-border{
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.services-icon{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+}
+
+.services-icon-1{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    z-index: 1;
+    font-size: 35px;
+    color: #95e1d3;
+}
+
+.services-title{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: @text-transform;
+    color:@color-intro-title;
+    margin-bottom: 10px;
+
+}
+
+.services-text{
+    font-size: 14px;
+}
+
+/*Карта*/
+
+.section-map{
+    background:url("../img/map.jpg") center no-repeat;
+    background-size: cover;
+    -weblit-background-size: cover;
+
+}
+
+.map{
+    text-align: center;
+}
+
+.map-title{
+    font-size: 24px;
+}
+
+.map-title a{
+    text-decoration: none;
+    color: @color-intro-title;
+}
+
+.map-title a:hover{
+    opacity: .7;
+}
+
+.map-geo{
+    padding: 10px;
+}
+
+.map-title:after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100px;
+    background-color: @color-intro-title;
+    margin: 20px auto;
+}
+
+/*buy section*/
+.section.buy{
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+
+.section-team{
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.title-team{
+    margin-bottom: 10px;
+    color: @color-intro-title;
+}
+
+.title-team.title-team-form{
+    margin-top: 20px;
+}
+
+/*форма отправки*/
+.form-all{
+    max-width: 580px;
+
+    text-align: center;
+    margin: auto;
+    padding: 20px 0;
+
+    background-color: #f8f8f8;
+}
+
+.field{
+    width: 100%;
+    max-width: 500px;
+    min-height: 40px;
+    background-color: #fff;
+    color: #212121;
+    font-style: italic;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+}
+
+.field-text{
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.field-ps{
+    font-size: 14px;
+    color:#66605F;
+    margin-bottom: 15px;
+}
+
+.subscribe-button.field-button{
+    max-width: 500px;
+
+    margin-top: 15px;
+}
+
+.field-not-found{
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}

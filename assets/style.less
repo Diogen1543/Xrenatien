@@ -1,0 +1,702 @@
+@import "vars";
+*,
+*:before,
+*:after {
+    box-sizing:border-box;
+    letter-spacing: 1.6px;
+}
+
+*{margin: 0;
+    padding: 0}
+
+body{
+    font-size: 18px;
+    color: #212121;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    width: 100%;
+    max-width: @max-width-container;
+    margin: 0 auto;
+    padding:0 15px;
+}
+
+hr{
+    display: block;
+    width: 100%;
+    height: 1px;
+
+    border: 0;
+    background-color: #9cb3b6;
+    margin: 40px 0;
+}
+
+.header{
+    width: 100%;
+    position: absolute;
+    top: @header-top;
+    left: @header-left;
+    right: @header-right;
+    z-index: @header-z;
+    margin-top: 20px;
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header.fixed{
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    transform:translate3d(0 0 0);
+
+    background:#f8f8f8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
+}
+
+.header.active{
+    background-color: #f8f8f8;
+}
+
+.sml-logo{
+    height: 40px;
+}
+
+
+/*меню*/
+.nav{
+    text-transform:@text-transform;
+    font-size: @font-size-nav;
+}
+
+.nav-link{
+    vertical-align: top;
+    text-decoration: none;
+    margin: @margin-nav-link;
+    font-weight: @font-weight-nav-link;
+    padding: @padding-nav-link;
+    color:@color-nav-link;
+    transition: color .1s linear;
+    position: relative;
+}
+
+.nav-link:after{
+    content: "";
+    width: 100%;
+    height: @height-nav-link;
+    display: none;
+    background-color:@background-nav-link;
+    left: @left-nav-link;
+    top: @top-nav-link;
+    z-index: @z-nav-link;
+    position: absolute;
+}
+
+.nav-link:hover{
+    color: @color-hover;
+}
+
+.nav-link:hover:after{
+    display: block;
+}
+
+/*nav-toggle*/
+.nav-toggle{
+    width: 30px;
+    padding: 10px 0;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 1;
+
+    font-size: 0;
+    color: transparent;
+
+    border: 0;
+    outline: 0;
+    background: none;
+    cursor: pointer;
+
+    display: none;
+}
+
+.nav-toggle.active .nav-toggle-item{
+    background: none;
+
+}
+
+.nav-toggle.active .nav-toggle-item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translateX(-2px);
+}
+
+.nav-toggle.active .nav-toggle-item:after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translateX(-4px);
+}
+
+.nav-toggle-item{
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #8c8c8c;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    transition: background .2s linear;
+
+}
+
+.nav-toggle-item:before,
+.nav-toggle-item:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #8c8c8c;
+
+    position: absolute;
+    left: 0;
+    z-index: 1;
+
+    transition: transform .2s linear;
+
+}
+
+.nav-toggle-item:before{
+    top: -8px;
+}
+
+.nav-toggle-item:after{
+    bottom: -8px;
+}
+
+
+/*page*/
+.page{
+    overflow: hidden;
+}
+
+/*intro*/
+.intro{
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+
+    background: url("../img/fons/intro.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.intro-product{
+    background: url("../img/fons/intro-product.jpg") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+
+}
+
+.intro-content{
+    margin-top: 450px;
+    position: absolute;
+}
+
+.intro-title{
+    color: @color-intro-title;
+    font-weight: @font-weight-intro-title;
+
+    text-transform: @text-transform;
+}
+
+.intro-h1{
+    margin-top: @margin-top-intro-h1;
+    font-weight: @font-weight-intro-h1;
+    font-size: @font-size-intro-h1;
+    letter-spacing: @letter-spacing-intro-h1;
+    text-transform: @text-transform;
+
+}
+
+.intro-text{
+    margin-top: @margin-top-intro-top;
+    font-weight: @font-weight-intro-top;
+    letter-spacing: @letter-spacing-intro-text;
+}
+
+.intro-button, {
+    margin-top:@margin-top-intro-button;
+    background-color: @background-intro-button;
+    display: inline-block;
+    padding:@padding-intro-button;
+    border: @border-intro-button;
+    box-shadow: @box-shadow-intro-button;
+    border-radius: @border-radius-intro-button;
+    text-align: center;
+    font-weight: @font-weight-intro-button;
+    letter-spacing: @letter-spacing-intro-button;
+    text-transform: @text-transform;
+}
+
+.intro-button a{
+    text-decoration: none;
+    color: #212121;
+}
+
+.intro-button a:hover {
+  color: @color-hover;
+}
+
+
+/*block section*/
+@import "section";
+
+/*block product*/
+@import "product";
+
+/*block studio*/
+@import "studio";
+
+/*or-us*/
+@import "orus";
+
+/*footer*/
+@import "footer";
+
+/*media*/
+
+@media (max-width:990px) {
+
+    .nav{
+        font-size: 14px;
+    }
+
+    .nav-link{
+        margin: 0;
+
+    }
+
+    .header-inner{
+        margin-top: 0;
+    }
+
+    .logo{
+        max-height: 70px;
+    }
+
+    /*intro*/
+    .intro{
+        background: url("../img/fons/intro-990.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 700px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .studio {
+    background: url("../img/fons/studio-990.jpg") center no-repeat;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+
+    .or-us {
+    background: url("../img/fons/or-us-990.jpg") center no-repeat;
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    -webkit-background-size: cover;
+    background-size: cover;
+  }
+
+    .intro-content{
+    margin-top: 370px;
+    width: 300px;
+    }
+
+    .intro-title{
+        font-size: 20px;
+    }
+
+    .intro-h1{
+        font-size: 48px;
+    }
+
+    .intro-text{
+        font-size: 15px;
+    }
+    .intro-button{
+       margin-top: 15px;
+    }
+
+    /*services*/
+    .services-item{
+        width: 50%;
+        padding-bottom: 0;
+
+    }
+
+    .services-item-border{
+        border: 0;
+    }
+
+    /*footer*/
+
+    .col-first{
+        width: 100%;
+    }
+
+    .col-second, .col-third{
+        width: 50%;
+    }
+
+    /* .footer-logo, .footer-title{
+        text-align: center;
+    }
+
+    .footer-text-block, .footer-follow{
+        justify-content: center;
+    }*/
+
+
+    /*page product*/
+
+    .prod-col{
+        justify-content: space-evenly;
+    }
+
+    .stud-card{
+        flex-wrap: wrap;
+
+    }
+
+    .stud-img-item{
+        margin: auto;
+    }
+
+    .stud-img{
+        width: 100%;
+        max-width: 490px;
+    }
+
+    .stud-text{
+        padding-left: 0;
+    }
+
+    /*page orus*/
+
+    .or-us-img-block{
+        flex-wrap: wrap;
+    }
+
+    .or-us-img-col{
+        flex: none;
+        width: 50%;
+    }
+
+    .soc-block{
+        justify-content: center;
+    }
+
+    .soc-item{
+        padding-bottom: 20px;
+        padding: 10px;
+        flex: none;
+    }
+
+}
+
+@media (max-width:770px) {
+
+    .nav.active{
+        display: block;
+    }
+
+    .nav-toggle{
+        top: 16px;
+        display: block;
+    }
+
+    /*intro*/
+    .intro{
+        background: url("../img/fons/intro-770.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 700px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .studio{
+        background: url("../img/fons/studio-770.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 900px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .or-us{
+        background: url("../img/fons/or-us-770.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+
+    .intro-content{
+    margin-top: 400px;
+    }
+
+    .nav{
+        display: none;
+
+        width: 100%;
+
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        background-color: #f8f8f8;
+    }
+
+    .nav-link{
+        display: block;
+        margin: 0;
+        padding: 8px 20px;
+        text-align: center;
+    }
+
+    .logo{
+        max-height: 50px;
+
+    }
+
+    /*section*/
+    .section{
+        padding: 25px 0;
+    }
+
+    /*services*/
+    .services{
+        justify-content: center;
+    }
+
+    .services-item{
+        width: 100%;
+         max-width: 400px;
+         padding-left: 45px;
+         padding-right: 0;
+
+    }
+
+    .services-icon,{
+        left: 0;
+    }
+
+    /*card*/
+    .card{
+        justify-content: center;
+    }
+
+    .card-item{
+        width: 100%;
+        max-width:300px;
+        margin-bottom: 30px;
+    }
+
+    .card-item:last-child {
+        margin-bottom: 0;
+    }
+     /*card or-us*/
+    .or-us-item{
+        margin-bottom: 0;
+    }
+
+    /*studio*/
+
+    .studio-gallery{
+        justify-content: center;
+    }
+
+    .studio-card-item{
+        width: 100%;
+        max-width:260px;
+        margin-bottom: 10px;
+    }
+
+     /*footer*/
+
+    .footer-inner{
+        padding-bottom: 35px;
+    }
+
+    .col-first, .col-second, .col-third{
+        width: 100%;
+        padding-bottom: 25px;
+    }
+
+    /*page or-us*/
+
+    .stud-text{
+        width: 100%;
+        font-size: 14px;
+        padding-top: 10px;
+    }
+
+    .stud-c::after{
+        margin: 20px auto 20px;
+    }
+
+     /*page product*/
+
+    .quotes-item{
+        padding-left: 0;
+    }
+
+    .quotes-photo{
+        position: static;
+        margin: 0 auto;
+    }
+
+    .quotes-text{
+        padding-top: 20px;
+
+    }
+
+    .section-img{
+        padding-top: 25px;
+        padding-bottom: 0;
+    }
+
+    .or-us-img-col{
+        width: 100%;
+    }
+
+    .soc-block{
+        display: block;
+    }
+
+}
+
+@media (max-width:575px) {
+
+    .intro{
+        background: url("../img/fons/intro-mini.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 400px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .studio{
+        background: url("../img/fons/studio-mini.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 400px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .studio.index{
+        background: url("../img/fons/studio-mini.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 1100px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .or-us{
+        background: url("../img/fons/or-us-mini.jpg") center no-repeat;
+        width: 100%;
+        height: 100vh;
+        min-height: 400px;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .intro-content{
+        margin-top: 450px;
+        max-width: 260px;
+    }
+
+    .intro-title{
+        font-size: 20px;
+        margin-top: 0;
+    }
+
+    .intro-h1{
+        font-size: 50px;
+        margin-top: 0;
+    }
+
+    .intro-text{
+        margin-top: 0;
+    }
+
+    .intro-button{
+        margin-top:10px;
+    }
+
+    /*product*/
+
+    .section-button{
+    margin-top: 15px;
+}
+
+
+    /*footer*/
+
+    .footer-follow{
+        flex-wrap: wrap;
+    }
+
+    .footer-follow-text,.footer-social {
+        width: 100%;
+    }
+
+    .subscribe{
+        flex-wrap: wrap;
+        max-width: none;
+    }
+
+    .subscribe-input, .subscribe-button{
+        width: 100%;
+    }
+    .subscribe-input{
+        margin-bottom: 10px;
+        border-right: 1px solid #e5e5e5;
+    }
+
+    /*buy*/
+    .field{
+        width: 100%;
+    }
+
+}
+
+@media (max-width:360px) {
+
+    .intro-content{
+        margin-top: 300px;
+        max-width: 260px;
+    }
+
+
+}

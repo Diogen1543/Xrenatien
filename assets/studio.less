@@ -1,0 +1,80 @@
+//main: style.less
+
+.studio{
+    background-image: url(../img/fons/studio-p1.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+
+}
+
+.studio-header{
+     width: 100%;
+    max-width: @max-width-container;
+}
+
+.studio-content-block{
+    display: flex;
+}
+
+.studio-content{
+    margin-top: 100px;
+    text-align: right;
+    flex: 1 1;
+}
+
+
+.studio-button{
+    display: inline-block;
+    padding: 10px 50px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.studio-button:hover {
+    color:@color-hover;
+}
+
+
+/*foto studio*/
+.studio-gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-end;
+    margin: 50px -15px 0;
+}
+
+.studio-card-item:last-child {
+    padding-bottom: 50px;
+}
+
+
+.stud-header{
+    padding-bottom: 40px;
+}
+
+
+.stud-card{
+    display: flex;
+}
+
+.stud-c::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 300px;
+    background-color: #c8c8c8;
+    margin: 40px auto 40px;
+}
+
+.stud-img{
+    /*width: 37%;
+    max-width: 493px;*/
+}
+
+.stud-text{
+    /*width: 63%;*/
+    padding-left: 100px;
+    padding-top: 50px;
+
+}
+

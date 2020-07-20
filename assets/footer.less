@@ -1,0 +1,170 @@
+//main: style.less
+
+.footer{
+    padding-top: 30px;
+    background-color: #f8f8f8;
+    color: #8c8c8c;
+}
+
+.footer-logo{
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 23px;
+    opacity: .7
+}
+
+.footer-logo a{
+    color: #95e1d3;
+    text-decoration: none;
+}
+
+.footer-logo a:hover{
+    opacity: .7;
+    color: @color-hover;
+}
+
+.footer-inner{
+    padding-bottom: 65px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-first{
+    width: 35%;
+
+}
+.col-second{
+    width: 25%;
+
+}
+.col-third{
+    width: 40%;
+}
+
+.footer-text-block{
+    padding-bottom: 12px;
+    display: flex;
+}
+
+.footer-title{
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.footer-text{
+    font-size: 15px;
+}
+
+
+.footer-img{
+    font-size: 20px;
+    padding-right: 15px;
+
+}
+
+.footer-follow{
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.footer-follow-text{
+    font-size: 15px;
+    padding-right: 10px;
+
+}
+
+
+.footer-social a{
+    color: #95e1d3;
+    font-size: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px
+}
+
+.footer-social a:hover {
+    color: @color-hover;
+}
+
+.footlink{
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.footer-link{
+    font-size: 15px;
+    color: #8c8c8c;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.footer-link:hover{
+    color: #212121;
+}
+
+/*subscribe*/
+.subscribe{
+    width:100%;
+    max-width:380px;
+    display: flex;
+}
+
+.subscribe-input{
+    width: 60%;
+    height: 40px;
+    background-color: #fff;
+    color: #212121;
+    font-style: italic;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-right: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.subscribe-input::placeholder{
+    color: #8c8c8c;
+}
+
+.subscribe-input:focus {
+    outline: 0;
+    border-right-color: @color-hover;
+}
+
+.subscribe-button{
+    width: 40%;
+    height: 40px;
+    background-color: #95e1d3;
+    color: #fff;
+    border: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: @text-transform;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.subscribe-button:hover {
+    background-color: @color-hover;
+    color: #fff;
+}
+
+.subscribe-button:focus {
+    outline: 0;
+}
+
+.privacy-policy{
+    margin-top: 24px;
+}
+
+.privacy-policy a{
+    font-size: 15px;
+    font-weight: 800;
+    color: #c8c8c8;
+    text-decoration: none;
+}
+
+.privacy-policy a:hover{
+    color: #212121;
+    opacity: .5;
+}
